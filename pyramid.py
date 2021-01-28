@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 """Print a pyramid to the terminal
-
 A pyramid of height 3 would look like:
-
 --=--
 -===-
 =====
-
 """
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
@@ -14,10 +11,15 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
 def print_pyramid(rows):
     """Print a pyramid of a given height
-
     :param int rows: total height
     """
-    raise NotImplementedError("Called with rows={}".format(rows))
+    for i in range(rows):
+        num_left_minus = rows-i-1
+        num_equal = 2*i+1
+        num_right_minus = rows-i-1
+        row = '-'*num_left_minus + '='*num_equal + '-'*num_right_minus
+        print(row)
+    print(rows)
 
 
 if __name__ == "__main__":
